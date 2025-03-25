@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack Royale</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0c10;
+      color: #ffffff;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: #66fcf1;
+    }
+    header p {
+      color: #c5c6c7;
+      font-size: 1.2rem;
+    }
+    section {
+      max-width: 950px;
+      background: #1f2833;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.4);
+    }
+    h2 {
+      color: #66fcf1;
+      border-bottom: 2px solid #45a29e;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .highlight {
+      background: #0b0c10;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      border-left: 4px solid #66fcf1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #45a29e;
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background: #0b0c10;
+    }
+    tr:nth-child(even) {
+      background: #1f2833;
+    }
+    code {
+      background: #0b0c10;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blackjack Royale</h1>
+    <p>The Ultimate Card Showdown</p>
+  </header>
+
+  <section>
+    <h2>Game Overview</h2>
+    <p>Blackjack Royale is a high-stakes card game that blends the core of Blackjack with elements of Poker. You must make a 3-card hand totaling exactly 21, using your hole cards and the revealed community cards. It’s a game of odds, timing, and bluffing that ends in a final showdown with the dealer.</p>
+  </section>
+
+  <section>
+    <h2>Complete Game Rules</h2>
+    <ul>
+      <li>Each round begins with players placing their initial bets.</li>
+      <li>Each player is dealt two hole cards (face down).</li>
+      <li>The dealer also receives two cards: one face up and one face down. The dealer cannot see their down card until final reveal.</li>
+      <li>Four community cards are revealed one at a time across four betting rounds.</li>
+      <li>Players may <strong>Check</strong>, <strong>Call</strong>, <strong>Raise</strong>, or <strong>Fold</strong> between each community card reveal.</li>
+      <li>You must build the best 3-card hand totaling 21 using at least one hole card and up to two community cards.</li>
+      <li>If you have 21 with your hole cards alone, you may declare a <strong>Blackjack Royale</strong>. The round stops, and others can challenge using all available community cards. If they match or beat your 21, they push or win by hand strength.</li>
+      <li>If more than one person reaches 21, compare hand strength using the chart below. Highest strength wins.</li>
+      <li>If no player reaches 21, the dealer reveals their down card and attempts to build a 3-card 21 using the same rules.</li>
+      <li>If the dealer achieves 21 and players don't, dealer wins the pot.</li>
+      <li>If neither dealer nor players hit 21, the closest score under 21 wins.</li>
+      <li>Anyone going over 21 busts and is out of the round.</li>
+      <li>If everyone hits 21 at once, highest hand strength wins — <strong>no pot splitting</strong>.</li>
+      <li>Bluffing, strategy, and betting order can greatly affect the game outcome.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Player Actions</h2>
+    <ul>
+      <li><strong>Check:</strong> You take no betting action. Only available if no one else has bet.</li>
+      <li><strong>Call:</strong> Match the highest current bet to stay in the round.</li>
+      <li><strong>Raise:</strong> Increase the current bet. Others must call or fold to stay in.</li>
+      <li><strong>Fold:</strong> Surrender your hand and lose your bet for the round.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hand Strength Chart</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Hand Type</th>
+          <th>Example</th>
+          <th>Strength Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Blackjack Royale (Hole Cards Only)</td><td>A♠ + K♠</td><td>100</td></tr>
+        <tr><td>2</td><td>Face + 10 + Ace</td><td>K♠ + 10♣ + A♥</td><td>90</td></tr>
+        <tr><td>3</td><td>Three Face Cards</td><td>Q♠ + K♦ + J♣</td><td>80</td></tr>
+        <tr><td>4</td><td>Two low + Ace</td><td>5♣ + 5♦ + A♠</td><td>70</td></tr>
+        <tr><td>5</td><td>Miscellaneous 21</td><td>7♠ + 9♥ + 5♣</td><td>60</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Example Scenarios</h2>
+    <div class="highlight">
+      <p><strong>Example 1:</strong> Player A declares Blackjack Royale with A♠ + K♠. Player B uses A♦ + 10♣ + Q♥ to challenge and gets 21. Player A wins with stronger hand (100 vs 90).</p>
+    </div>
+    <div class="highlight">
+      <p><strong>Example 2:</strong> Dealer has Q♦ face-up, hidden card is 9♠. Final card from community makes 21. Only Player C had 21 before. Player C still wins due to higher score.</p>
+    </div>
+    <div class="highlight">
+      <p><strong>Example 3:</strong> Everyone busts except the dealer, who ends with 20. Dealer wins all bets.</p>
+    </div>
+    <div class="highlight">
+      <p><strong>Example 4:</strong> Player X folds after second community card, forfeiting their chips. Player Y raises and wins the round by default when others fold.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tips & House Variants</h2>
+    <ul>
+      <li>Try bonus rounds where a fifth community card is revealed ("Joker Round").</li>
+      <li>Award bonus chips for declaring a successful Blackjack Royale.</li>
+      <li>The winner becomes the next dealer for added variation.</li>
+      <li>Use themed chips or stylish card decks for added atmosphere.</li>
+    </ul>
+  </section>
+</body>
+</html>
